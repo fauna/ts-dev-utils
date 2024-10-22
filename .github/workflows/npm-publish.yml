@@ -40,10 +40,10 @@ jobs:
       with:
         commit_author: ${{ steps.last-commit.outputs.author }}
         file_pattern: 'package.json'
-      commit_message: ${{ steps.last-commit.outputs.message }}
-      commit_options: '--amend --no-edit'
-      push_options: '--force'
-      skip_fetch: true
+        commit_message: ${{ steps.last-commit.outputs.message }}
+        commit_options: '--amend --no-edit'
+        push_options: '--force'
+        skip_fetch: true
     - run: npm publish --access public --loglevel verbose --dry-run
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
