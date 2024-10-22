@@ -1,5 +1,5 @@
 // borrowed from fauna-shell
-export default [
+const config = [
   {
     ignores: ["**/node_modules", ".history"],
   },
@@ -33,3 +33,5 @@ export default [
     },
   },
 ];
+
+module.exports = config;
