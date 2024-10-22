@@ -4,8 +4,13 @@
   "description": "A collection of lint, format, and build configs used at Fauna for TypeScript projects.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cp ./config/.gitignore .gitignore",
+    "bump": "node ./scripts/version-bump.js"
   },
+  "files": [
+    "config/**"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fauna/typescript.git"
@@ -15,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/fauna/typescript/issues"
   },
-  "homepage": "https://github.com/fauna/typescript#readme"
+  "homepage": "https://github.com/fauna/typescript#readme",
+  "dependencies": {
+    "mentions-regex": "^2.0.3",
+    "parse-commit-message": "^5.0.4"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
 }
