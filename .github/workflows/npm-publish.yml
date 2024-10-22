@@ -44,6 +44,6 @@ jobs:
         commit_options: '--amend --no-edit'
         push_options: '--force'
         skip_fetch: true
-    - run: npm publish --access public
+    - run: npm publish --access public --loglevel verbose
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
