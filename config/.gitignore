@@ -3,3 +3,17 @@
 # the project's build step copies it from /config
 
 node_modules
+
+# fauna-shell
+/.nyc_output
+/dist
+/tmp
+/experiments
+.test_config
+.env
+.idea
+/.vscode
+*.log
+/coverage
+test-results.xml
+/.history
