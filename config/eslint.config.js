@@ -1,3 +1,5 @@
+const eslintConfigPrettier = require("eslint-config-prettier");
+
 // borrowed from fauna-shell
 const config = [
   {
@@ -32,6 +34,8 @@ const config = [
       "no-unused-expressions": "off",
     },
   },
+  // this disables eslint's formatting rules that collide with prettier's
+  eslintConfigPrettier,
 ];
 
-module.exports = config;
+module.exports = { config };
