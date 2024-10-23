@@ -1,6 +1,6 @@
 {
   "name": "@fauna/typescript",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A collection of lint, format, and build configs used at Fauna for TypeScript projects.",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/fauna/typescript#readme",
   "dependencies": {
+    "eslint-config-prettier": "^9.1.0",
     "mentions-regex": "^2.0.3",
     "parse-commit-message": "^5.0.4"
   },
