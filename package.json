@@ -1,6 +1,6 @@
 {
   "name": "@fauna/typescript",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "A collection of lint, format, and build configs used at Fauna for TypeScript projects.",
   "main": "index.js",
   "scripts": {
