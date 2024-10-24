@@ -1,6 +1,3 @@
-const eslintConfigPrettier = require("eslint-config-prettier");
-
-// borrowed from fauna-shell
 const config = [
   {
     ignores: ["**/node_modules", ".history"],
@@ -9,33 +6,35 @@ const config = [
     languageOptions: {
       ecmaVersion: 2020,
     },
-
-    rules: {
-      "no-await-in-loop": "off",
-      "new-cap": "off",
-      "quote-props": "off",
-      "no-negated-condition": "off",
-      "no-warning-comments": "off",
-      "spaced-comment": "off",
-      "max-nested-callbacks": "off",
-      "no-else-return": "off",
-      "no-console": "off",
-      "no-multi-str": "off",
-      "no-prototype-builtins": "off",
-
-      "node/no-unsupported-features": "off",
-      camelcase: "off",
-    },
   },
   {
     files: ["test/**/*.mjs"],
 
     rules: {
       "no-unused-expressions": "off",
+      "no-empty-function": "off",
+      "camelcase": "off",
     },
   },
-  // this disables eslint's formatting rules that collide with prettier's
-  eslintConfigPrettier,
 ];
 
-module.exports = { config };
+const sharedGlobals = {
+  console: "readonly",
+  URLSearchParams: "readonly",
+  Blob: "readonly",
+  URL: "readonly",
+  FormData: "readonly",
+  fetch: "readonly",
+};
+
+const nodeGlobals = {
+  ...sharedGlobals,
+  Buffer: "readonly",
+  process: "readonly",
+};
+
+const browserGlobals = {
+  ...sharedGlobals,
+};
+
+module.exports = { config, nodeGlobals, browserGlobals, };

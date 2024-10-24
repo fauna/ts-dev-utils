@@ -1,6 +1,6 @@
 {
   "name": "@fauna/typescript",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A collection of lint, format, and build configs used at Fauna for TypeScript projects.",
   "main": "index.js",
   "scripts": {
@@ -32,5 +32,9 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1"
   }
 }
