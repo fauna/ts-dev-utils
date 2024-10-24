@@ -1,0 +1,27 @@
+# This uses `npm ci --omit=dev --include=peer --include=optional` to get a
+# bundle of only prod dependencies, then runs `npm test`, which checks the exit
+# code of running our config files. This is a quick smoke test to make sure
+# that we have our dependencies installed correctly for consumers.
+
+name: Test
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "*" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js (22.x)
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22.x
+        registry-url: 'https://registry.npmjs.org'
+        cache: 'npm'
+    - run: npm ci --omit=dev --include=peer --include=optional
+    - run: npm test
