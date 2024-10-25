@@ -1,6 +1,10 @@
 const config = [
   {
-    ignores: ["**/node_modules", ".history"],
+    ignores: [
+      "**/node_modules",
+      ".history",
+      "dist",
+    ],
   },
   {
     languageOptions: {
