@@ -26,18 +26,18 @@ yarn add -D @fauna/typescript
 
 ## Configure
 ### ES Lint Config
-In `eslint.config.mjs` put:
+In `eslint.config.js` put:
 
 ```(javascript)
 import { config as defaultConfig } from "@fauna/typescript/config/js/eslint.config.js";
 
 export default [
   ...defaultConfig,
-   // ... any customizations you'd like
+   // ...any customizations you'd like
 ];
 ```
 ### Prettier Config
-
+In `prettier.config.js`
 ```(javascript)
 import basePrettierConfig from "@fauna/typescript/config/prettierrc.js";
 
@@ -46,6 +46,7 @@ import basePrettierConfig from "@fauna/typescript/config/prettierrc.js";
  */
 const config = {
   ...basePrettierConfig,
+  // ...any customizations you'd like
 };
 
 export default config;
