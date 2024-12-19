@@ -11,7 +11,54 @@ A collection of lint, format, and build configs used at Fauna for TypeScript pro
 - `eslint-formatter.js`, a custom eslint output formatter intended for estimating the cost of adding new rules to an eslint config. From a consumer of `@fauna/typescript`, run it like `npx eslint --format ./node_modules/@fauna/typescript/scripts/eslint-formatter.js .`.
 - `version-bump.js`, a script intended for use in CI environments to automatically version bump a npm package. Useful for packages that should be versioned and deployed on every merge to `main`.
 
-## Workflows
+## Usage
 
-### Development
-Develop on this package by running `npm install && npm link`. Then, navigate to a package that depends on this project and run `npm link @fauna/typescript`. [npm link](https://docs.npmjs.com/cli/v10/commands/npm-link) builds a symlink from the node_modules directory of the dependent package to `@fauna/typescript`, allowing you to develop locally in real time. When done, run `npm unlink @fauna/typescript` from any directory.
+### Install
+#### I use npm
+```
+npm install --save-dev @fauna/typescript
+```
+
+#### I use yarn
+```
+yarn add -D @fauna/typescript
+```
+
+## Configure
+### ES Lint Config
+In `eslint.config.js` put:
+
+```(javascript)
+import { config as defaultConfig } from "@fauna/typescript/config/js/eslint.config.js";
+
+export default [
+  ...defaultConfig,
+   // ...any customizations you'd like
+];
+```
+### Prettier Config
+In `prettier.config.js`
+```(javascript)
+import basePrettierConfig from "@fauna/typescript/config/prettierrc.js";
+
+/**
+ * @type {import("prettier").Config}
+ */
+const config = {
+  ...basePrettierConfig,
+  // ...any customizations you'd like
+};
+
+export default config;
+```
+
+## Script
+You can then write scripts in your `package.json` such as:
+
+```(json)
+  "scripts": {
+    "lint": "eslint . --fix",
+    "format": "prettier -w --log-level silent .",
+    "format:check": "prettier -c ."
+  }
+```
