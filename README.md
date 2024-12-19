@@ -28,7 +28,7 @@ yarn add -D @fauna/typescript
 ### ES Lint Config
 In `eslint.config.js` put:
 
-```(javascript)
+```javascript
 import { config as defaultConfig } from "@fauna/typescript/config/js/eslint.config.js";
 
 export default [
@@ -38,7 +38,7 @@ export default [
 ```
 ### Prettier Config
 In `prettier.config.js`
-```(javascript)
+```javascript
 import basePrettierConfig from "@fauna/typescript/config/prettierrc.js";
 
 /**
@@ -55,7 +55,7 @@ export default config;
 ## Script
 You can then write scripts in your `package.json` such as:
 
-```(json)
+```json
   "scripts": {
     "lint": "eslint . --fix",
     "format": "prettier -w --log-level silent .",
