@@ -8,7 +8,7 @@ const config = [
   },
   {
     languageOptions: {
-      ecmaVersion: 2020,
+      ecmaVersion: 2022,
     },
   },
   {
