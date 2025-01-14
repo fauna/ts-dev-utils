@@ -1,5 +1,5 @@
 {
-  "name": "@fauna/typescript",
+  "name": "@fauna/ts-dev-utils",
   "version": "0.0.15",
   "description": "A collection of lint, format, and build configs used at Fauna for TypeScript projects.",
   "main": "index.js",
@@ -13,14 +13,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fauna/typescript.git"
+    "url": "git+https://github.com/fauna/ts-dev-utils.git"
   },
   "author": "Fauna",
   "license": "MPL-2.0",
   "bugs": {
-    "url": "https://github.com/fauna/typescript/issues"
+    "url": "https://github.com/fauna/ts-dev-utils/issues"
   },
-  "homepage": "https://github.com/fauna/typescript#readme",
+  "homepage": "https://github.com/fauna/ts-dev-utils#readme",
   "dependencies": {
     "eslint-config-prettier": "^9.1.0",
     "mentions-regex": "^2.0.3",
